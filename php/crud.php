@@ -5,8 +5,7 @@
 	class crud {
 
 		public function obtendatos($idcotizacion){
-				/* Connect To Database*/
-		    require_once ("db.php");//Contiene las variables de configuracion para conectar a la base de datos
+				/* Connect To Database*/		   
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
 		    $sql = "SELECT id_cotizacion, 
@@ -49,7 +48,6 @@
 
 		public function actualizar($datos){
 			/* Connect To Database*/
-		    require_once ("db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
 		    $sql = "UPDATE cotizaciones_demo set 
@@ -75,7 +73,6 @@
 
 		public function eliminar($idcotizacion){
 			/* Connect To Database*/
-		    require_once ("db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
 		    $sql = "DELETE from cotizaciones_demo where id_cotizacion = '$idcotizacion'";

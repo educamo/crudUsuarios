@@ -1,11 +1,8 @@
 <?php
-	/*-------------------------
-	Autor: Eduardo Carrasco
-	Web: eduardocarrasco.photography
-	Mail: eduardocarrascofotografia@gmail.com
-	---------------------------*/
+ require_once ("db.php"); //Contiene las variables de configuracion para conectar a la base de datos
+
 	# conectare la base de datos
-    $con=@mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     if(!$con){
         die("imposible conectarse: ".mysqli_error($con));
     }
