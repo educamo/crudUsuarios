@@ -40,7 +40,7 @@ for($i=0; $i<count($data); $i++)
                          <td>
                          
                             <a href='#' data-toggle='modal' data-target='#dataUpdate' onclick='mostrar($id)' title='Editar Registro'><i class='btn btn-warning btn-sm'><span class='fa fa-edit'></span></i></a>
-                            <a href='#' id='".$id."' class='borrar' title='Eliminar el Registro'><i class='btn btn-danger btn-sm'><span class='fa fa-trash'></span></i></a>
+                            <a href='#' onclick='borrar($id)' title='Eliminar el Registro'><i class='btn btn-danger btn-sm'><span class='fa fa-trash'></span></i></a>
                          </td>
                     </tr>";
           } 
@@ -48,21 +48,3 @@ for($i=0; $i<count($data); $i++)
     ?> 
     </tbody>
 </table>
-
-
-    <script>
-        $(".borrar").click((function(event){
-        event.preventDefault();
-        var id = $(".borrar").attr("id");
-        
-        var opcion = confirm("Esta seguro de querer eliminar este registro");
-     
-        if (opcion == true)
-        {
-            var url = "php/eliminar.php?id="+id;
-
-            window.location = url;
-        }
-
-    }));
-    </script>

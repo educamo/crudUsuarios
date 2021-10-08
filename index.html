@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -243,6 +243,21 @@
         $(document).ready(function() {
             $('#table_id').DataTable();
         });
+    </script>
+
+    <script>
+        function borrar(id) {
+
+            var opcion = confirm("Esta seguro de querer eliminar este registro");
+
+            if (opcion == true) {
+                console.log(id);
+                var url = "php/eliminar.php?id=" + id;
+
+                window.location = url;
+            }
+
+        };
     </script>
 
     <!-- modal Nuevo registro -->

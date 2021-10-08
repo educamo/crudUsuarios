@@ -5,7 +5,6 @@
     $obj = new crud();
 
 
-
     echo  $obj->eliminar($_GET['id']);
 
     $nuevaURL = '../index.html';

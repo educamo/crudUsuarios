@@ -14,6 +14,7 @@ $datos = array(
 	
 echo $obj->actualizar($datos);
 
+
 $nuevaURL = '../index.html';
 
 header("Location: $nuevaURL");
