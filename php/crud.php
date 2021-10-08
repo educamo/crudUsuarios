@@ -27,21 +27,18 @@
 		public function actualizar($datos){			   
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
-		    $sql = "UPDATE cotizaciones_demo set 
-		    									numero_cotizacion = '$datos[1]', 
-											    atencion = '$datos[2]', 
-											    email = '$datos[3]',
-											    fecha_cotizacion = '$datos[4]',
-											    tel1 = '$datos[5]',
-											    empresa = '$datos[6]',
-											    tel2 = '$datos[7]',
-											    condiciones = '$datos[8]',
-											    validez = '$datos[9]',
-											    entrega = '$datos[10]',
-											    activo = '$datos[11]' 
-									      where id_cotizacion = '$datos[0]'";
+		    $sql = "UPDATE usuarios set 
+										idUsuario = '$datos[0]{, 
+										nombres   = '$datos[1]', 
+										apellidos = '$datos[2]', 
+										direccion = '$datos[3]', 
+										telefono  = '$datos[4]', 
+										mail      = '$datos[5]',	
+
+							where idUsuario = '$datos[0]'";
 
 			$datos= mysqli_query($con, $sql);
+			var_dump($datos); die();
 
 			mysqli_close($con);
 
@@ -50,8 +47,6 @@
 
 		public function eliminar($id){		
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
-
-			//var_dump($id); die();
 
 		    $sql = "DELETE from usuarios where idUsuario = $id";
 
