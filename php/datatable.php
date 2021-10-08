@@ -38,11 +38,12 @@ for($i=0; $i<count($data); $i++)
                          <td>".$data[$i]->telefono."</td>
                          <td>".$data[$i]->mail."</td>                         
                          <td>
-                            <a href='php/actualizar.php?id=".$id."' alt='Editar Registro'><i class='btn btn-warning btn-sm'><span class='fa fa-edit'></span></i></a>
-                            <a href='#' id='".$id."' class='borrar' alt='Eliminar el Registro'><i class='btn btn-danger btn-sm'><span class='fa fa-trash'></span></i></a>
+                         
+                            <a href='#' data-toggle='modal' data-target='#dataUpdate' onclick='mostrar($id)' title='Editar Registro'><i class='btn btn-warning btn-sm'><span class='fa fa-edit'></span></i></a>
+                            <a href='#' id='".$id."' class='borrar' title='Eliminar el Registro'><i class='btn btn-danger btn-sm'><span class='fa fa-trash'></span></i></a>
                          </td>
                     </tr>";
-          }
+          } 
  
     ?> 
     </tbody>
