@@ -48,7 +48,7 @@
 			return $datos;
 		}
 
-		public function eliminar($idcotizacion){		
+		public function eliminar($id){		
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
 			//var_dump($id); die();
