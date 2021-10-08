@@ -28,17 +28,16 @@
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
 		    $sql = "UPDATE usuarios set 
-										idUsuario = '$datos[0]{, 
+										idUsuario = '$datos[0]',
 										nombres   = '$datos[1]', 
 										apellidos = '$datos[2]', 
 										direccion = '$datos[3]', 
 										telefono  = '$datos[4]', 
-										mail      = '$datos[5]',	
+										mail      = '$datos[5]'	
 
 							where idUsuario = '$datos[0]'";
 
 			$datos= mysqli_query($con, $sql);
-
 
 			mysqli_close($con);
 
