@@ -24,9 +24,7 @@
 		    return $datos;
 		}
 
-		public function actualizar($datos){
-			/* Connect To Database*/
-		    require_once ("db.php");//Contiene las variables de configuracion para conectar a la base de datos
+		public function actualizar($datos){			   
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
 		    $sql = "UPDATE cotizaciones_demo set 
@@ -50,9 +48,7 @@
 			return $datos;
 		}
 
-		public function eliminar($idcotizacion){
-			/* Connect To Database*/
-		    require_once ("db.php");//Contiene las variables de configuracion para conectar a la base de datos
+		public function eliminar($idcotizacion){		
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
 			//var_dump($id); die();
