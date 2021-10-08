@@ -38,7 +38,7 @@
 							where idUsuario = '$datos[0]'";
 
 			$datos= mysqli_query($con, $sql);
-			var_dump($datos); die();
+
 
 			mysqli_close($con);
 
