@@ -1,45 +1,23 @@
 <?php 
 	/**
-	  * clase crud donde estan todos los metodos de 
+	  * clase crud donde estan todos los metodos
 	  */
 	class crud {
 
-		public function obtendatos($idcotizacion){
-				/* Connect To Database*/		   
+		public function obtendatos(){		    
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
-		    $sql = "SELECT id_cotizacion, 
-		    numero_cotizacion, 
-		    atencion, 
-		    email,
-		    fecha_cotizacion,
-		    tel1,
-		    empresa,
-		    tel2,
-		    condiciones,
-		    validez,
-		    entrega,
-		    activo
-		    FROM cotizaciones_demo
-		    where id_cotizacion = '$idcotizacion'";
+		    $sql = "SELECT * FROM usuarios";
+			$datos = array();
 
 		    $result = mysqli_query($con, $sql);
-		    $bus_cotizacion = mysqli_fetch_row($result);
+	
 
-		    $datos = array(
-		    	'id_cotizacion' 	=> $bus_cotizacion[0],
-		    	'numero_cotizacion' => $bus_cotizacion[1],
-		    	'atencion' 			=> $bus_cotizacion[2],
-		    	'email' 			=> $bus_cotizacion[3],
-		    	'fecha_cotizacion' 	=> $bus_cotizacion[4], 
-		    	'tel1' 				=> $bus_cotizacion[5],
-		    	'empresa' 			=> $bus_cotizacion[6],
-		    	'tel2' 				=> $bus_cotizacion[7],
-		    	'condiciones' 		=> $bus_cotizacion[8],
-		    	'validez' 			=> $bus_cotizacion[9],
-		    	'entrega' 			=> $bus_cotizacion[10],
-		    	'activo'			=> $bus_cotizacion[11],
-		    );
+			while($objeto = mysqli_fetch_object($result)){
+
+				array_push($datos, $objeto);
+				}
+			
 
 		    mysqli_close($con);
 
@@ -48,6 +26,7 @@
 
 		public function actualizar($datos){
 			/* Connect To Database*/
+		    require_once ("db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
 		    $sql = "UPDATE cotizaciones_demo set 
@@ -73,12 +52,31 @@
 
 		public function eliminar($idcotizacion){
 			/* Connect To Database*/
+		    require_once ("db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		    require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
 
-		    $sql = "DELETE from cotizaciones_demo where id_cotizacion = '$idcotizacion'";
+			//var_dump($id); die();
+
+		    $sql = "DELETE from usuarios where idUsuario = $id";
+
+			
+		    mysqli_query($con, $sql);
+			mysqli_close($con);
+			return false;
+		}
+
+		public function guardar($datos){
+			require_once ("conexion.php");//Contiene funcion que conecta a la base de datos
+			
+		    $sql = "INSERT INTO usuarios (idUsuario, nombres, apellidos, direccion, telefono, mail) 
+					VALUES ('$datos[0]', '$datos[1]', '$datos[2]', '$datos[3]', '$datos[4]', '$datos[5]')";
+
+$datos= mysqli_query($con, $sql);
 
 			mysqli_close($con);
-		    return mysqli_query($con, $sql);
+
+			return $datos;
+
 		}
 
 		

@@ -1,6 +1,5 @@
 <?php
- require_once ("db.php"); //Contiene las variables de configuracion para conectar a la base de datos
-
+    require_once ("db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	# conectare la base de datos
     $con = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     if(!$con){

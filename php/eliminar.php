@@ -5,6 +5,12 @@
     $obj = new crud();
 
 
-    echo $obj->eliminar($_POST['idcotizacion']);
+
+    echo  $obj->eliminar($_GET['id']);
+
+    $nuevaURL = '../index.html';
+
+    header("Location: $nuevaURL");
+die();
 
 ?>
